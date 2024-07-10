@@ -63,7 +63,7 @@ watch(() => [form.subject_title, form.message], () => {
                 :placeholder="currentSelection.language === 'ENG' ? 'Enter subject' : '輸入標題'"
                 :errorMessage="form.errors ? form.errors.subject_title  : ''"
                 v-model="form.subject_title"
-                class="flex-[1_0_0] font-bold text-md"
+                class="font-bold text-md"
             />
             <TextInput
                 :inputName="'message'"
@@ -72,7 +72,7 @@ watch(() => [form.subject_title, form.message], () => {
                 :placeholder="currentSelection.language === 'ENG' ? 'Write your message here...' : '在這裡寫下您的內容...'"
                 :errorMessage="form.errors ? form.errors.message  : ''"
                 v-model="form.message"
-                class="flex-[1_0_0] font-normal text-sm"
+                class="text-sm"
             />
         </div>
         <div class="fixed bottom-0 left-0 right-0 flex py-5 px-4 justify-end items-center self-stretch border-t border-gray-2 dark:border-gray-7">

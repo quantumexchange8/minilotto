@@ -21,6 +21,10 @@
     "dependencies": {
         "@headlessui/vue": "^1.7.22",
         "@primevue/themes": "^4.0.0",
+        "@tiptap/extension-placeholder": "^2.4.0",
+        "@tiptap/pm": "^2.4.0",
+        "@tiptap/starter-kit": "^2.4.0",
+        "@tiptap/vue-3": "^2.4.0",
         "primevue": "^4.0.0"
     }
 }

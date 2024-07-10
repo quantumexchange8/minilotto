@@ -4,6 +4,9 @@ import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import { EyeClosedIcon, EyeIcon } from "./Icons/outline.jsx";
 import { currentSelection } from '@/Composables';
+import { useEditor, EditorContent } from '@tiptap/vue-3'
+import StarterKit from '@tiptap/starter-kit'
+import Placeholder from '@tiptap/extension-placeholder'
 
 const props = defineProps({
     inputName: String,
@@ -52,16 +55,35 @@ const labelText = computed(() => {
     return currentSelection.language === 'ENG' ? props.labelTextEng : props.labelTextZh;
 });
 
-defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue"]);
 
-const input = ref(null);
+const editor = useEditor({
+    content: props.modelValue,
+    onUpdate: ({editor}) => {
+        emit('update:modelValue', editor.getHTML())
+    },
+    editorProps: {
+        attributes: {
+            class: 'w-full border-none focus:outline-none dark:bg-transparent rounded text-gray-8 dark:text-white focus:!ring-0 placeholder:text-gray-3 dark:placeholder:text-gray-4 caret-blue-1',
+        },
+    },
+    extensions: [
+        StarterKit,
+        Placeholder.configure({
+            emptyEditorClass: 'cursor-text before:content-[attr(data-placeholder)]',
+            placeholder: props.placeholder,
+        }),
+    ],
+})
 
-const focus = () => input.value?.focus();
+// const input = ref(null);
 
-defineExpose({
-    input,
-    focus,
-});
+// const focus = () => input.value?.focus();
+
+// defineExpose({
+//     input,
+//     focus,
+// });
 
 const showPassword = ref(false);
 
@@ -77,9 +99,9 @@ const toggleShow = () => {
 // };
 
 onMounted(() => {
-    if (input.value.hasAttribute("autofocus")) {
-        input.value.focus();
-    }
+    // if (input.value.hasAttribute("autofocus")) {
+    //     input.value.focus();
+    // }
     
     // resizeTextarea();
 });
@@ -150,7 +172,9 @@ watch(() => props.modelValue, () => {
                 </button>
             </span>
         </div>
-        <textarea
+        
+        <EditorContent :editor="editor" v-else-if="inputType === 'textarea'" />
+        <!-- <textarea
             v-else-if="inputType === 'textarea'"
             :name="inputName"
             :class="[
@@ -164,7 +188,7 @@ watch(() => props.modelValue, () => {
             :rows="rows"
             :disabled="disabled"
             :placeholder="placeholder"
-        />
+        /> -->
         <InputError :message="props.errorMessage" v-if="props.errorMessage" />
     </div>
 </template>

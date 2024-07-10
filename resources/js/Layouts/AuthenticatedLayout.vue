@@ -52,7 +52,6 @@ const showingNavigationDropdown = ref(false);
                                         :href="route('logout')"
                                         method="post"
                                         :variant="'icon'"
-                                        aria-label="Toggle translation"
                                     >
                                         <LogoutIcon class="w-5 h-5 text-gray-5 dark:text-white"/>
                                     </Button>
