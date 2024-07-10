@@ -46,7 +46,7 @@ const { type, variant, squared, pill, href, iconPosition, srText, external } = p
 const { disabled } = toRefs(props)
 
 const baseClasses = [
-    'inline-flex w-full items-center justify-center self-center whitespace-nowrap transition-colors font-medium text-sm select-none disabled:cursor-not-allowed focus:outline-none ',
+    'inline-flex items-center justify-center self-center whitespace-nowrap transition-colors font-medium text-sm select-none disabled:cursor-not-allowed focus:outline-none ',
 ]
 
 const variantClasses = (variant) => ({
@@ -59,7 +59,7 @@ const variantClasses = (variant) => ({
 const classes = computed(() => [
     ...baseClasses,
     variantClasses(variant),
-    variant === 'icon' ? 'p-3 rounded-full w-fit' : 'py-3 px-6 rounded-1 w-full',
+    variant === 'icon' ? 'p-3 rounded-full w-fit' : 'py-3 px-6 rounded w-full',
     // {
     //     'rounded-md': !squared && !pill,
     //     'rounded-full': pill,

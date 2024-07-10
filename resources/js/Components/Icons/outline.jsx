@@ -237,3 +237,167 @@ export const EyeIcon = defineComponent({
         );
     },
 });
+
+export const LogoutIcon = defineComponent({
+    setup() {
+        return () => (
+            <svg  
+                xmlns="http://www.w3.org/2000/svg"  
+                width="24"  
+                height="24"  
+                viewBox="0 0 24 24"  
+                fill="none"  
+                stroke="currentColor"  
+                stroke-width="1.5"  
+                stroke-linecap="round"  
+                stroke-linejoin="round"  
+                class="icon icon-tabler icons-tabler-outline icon-tabler-logout"
+            >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                <path d="M9 12h12l-3 -3" />
+                <path d="M18 15l3 -3" />
+            </svg>
+        );
+    },
+});
+
+// Date component
+
+export const CircledTimesIcon = defineComponent({
+    setup() {
+        return () => (
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+            >
+                <rect width="16" height="16" rx="8" fill="fill-current" />
+                <path
+                    d="M10 6L6 10M6 6L10 10"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+        );
+    },
+});
+
+export const CircledArrowHeadLeftIcon = defineComponent({
+    setup() {
+        return () => (
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <rect
+                    x="20"
+                    y="20"
+                    width="20"
+                    height="20"
+                    rx="10"
+                    transform="rotate(180 20 20)"
+                    fill="fill-current"
+                />
+                <path
+                    d="M12.917 15.8333L7.08366 9.99996L12.917 4.16663"
+                    stroke="#353D45"
+                    stroke-width="1.25"
+                    stroke-linecap="square"
+                />
+            </svg>
+        );
+    },
+});
+
+export const CircledArrowHeadRightIcon = defineComponent({
+    setup() {
+        return () => (
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <rect
+                    width="20"
+                    height="20"
+                    rx="10"
+                    transform="matrix(1 0 0 -1 0 20)"
+                    fill="fill-current"
+                />
+                <path
+                    d="M7.08301 15.8333L12.9163 9.99996L7.08301 4.16663"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="square"
+                />
+            </svg>
+        );
+    },
+});
+
+export const CircledArrowHeadUpIcon = defineComponent({
+    setup() {
+        return () => (
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <rect
+                    width="20"
+                    height="20"
+                    rx="10"
+                    transform="matrix(0 -1 -1 0 20 20)"
+                    fill="fill-current"
+                />
+                <path
+                    d="M15.8337 12.9166L10.0003 7.08329L4.16699 12.9166"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="square"
+                />
+            </svg>
+        );
+    },
+});
+
+export const CircledArrowHeadDownIcon = defineComponent({
+    setup() {
+        return () => (
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <rect
+                    x="20"
+                    width="20"
+                    height="20"
+                    rx="10"
+                    transform="rotate(90 20 0)"
+                    fill="fill-current"
+                />
+                <path
+                    d="M15.8337 7.08337L10.0003 12.9167L4.16699 7.08337"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="square"
+                />
+            </svg>
+        );
+    },
+});
