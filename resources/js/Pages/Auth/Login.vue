@@ -34,8 +34,8 @@ const submit = () => {
 
         <div class="flex flex-col pt-10 px-4 gap-8">
             <div class="flex flex-col gap-3 items-center justify-center">
-                <span class="text-gray-8 text-lg font-bold text-center">{{ currentSelection.language === 'ENG' ? 'Admin Log In' : '管理員登入' }}</span>
-                <span class="text-gray-4 text-md font-normal text-center">{{ currentSelection.language === 'ENG' ? 'Welcome back! Please enter your password.' : '歡迎回來！請輸入您的密碼。' }}</span>
+                <span class="text-gray-8 dark:text-white text-lg font-bold text-center">{{ currentSelection.language === 'ENG' ? 'Admin Log In' : '管理員登入' }}</span>
+                <span class="text-gray-4 dark:text-gray-3 text-md font-normal text-center">{{ currentSelection.language === 'ENG' ? 'Welcome back! Please enter your password.' : '歡迎回來！請輸入您的密碼。' }}</span>
             </div>
 
             <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
