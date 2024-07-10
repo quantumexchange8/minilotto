@@ -48,7 +48,6 @@ const submit = () => {
                         :inputName="'password'"
                         :labelTextEng="'Password'"
                         :labelTextZh="'密碼'"
-                        :placeholder="'••••••••'"
                         :inputType="'password'"
                         :errorMessage="form.errors.password"
                         autocomplete="current-password"

@@ -22,7 +22,6 @@ Route::middleware('auth')->group(function () {
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::get('/', [RecordController::class, 'index'])->name('dashboard');
-    Route::get('/dashboard', [RecordController::class, 'index'])->name('dashboard');
     Route::get('/records/getAllRecords', [RecordController::class, 'getAllRecords'])->name('records.getAllRecords');
     Route::post('/records/createRecord', [RecordController::class, 'store'])->name('records.store');
     Route::put('/records/updateRecord/{id}', [RecordController::class, 'updateRecord'])->name('records.updateRecord');

@@ -1,4 +1,4 @@
-import { ref, watchEffect, reactive } from 'vue';
+import { ref, watchEffect, reactive, watch } from 'vue';
 
 const tx = document.getElementsByTagName("textarea");
 for (let i = 0; i < tx.length; i++) {
@@ -46,10 +46,17 @@ export function useDarkMode() {
   };
 }
 
+const storedLanguage = localStorage.getItem('language') || 'ENG';
+
 export const currentSelection = reactive({
-  language: 'ENG',
+  language: storedLanguage,
 
   switchLanguage() {
     this.language = this.language === 'ENG' ? 'ZH' : 'ENG';
   },
-})
+});
+
+// Watch the language and store it in local storage whenever it changes
+watch(() => currentSelection.language, (newLanguage) => {
+  localStorage.setItem('language', newLanguage);
+});

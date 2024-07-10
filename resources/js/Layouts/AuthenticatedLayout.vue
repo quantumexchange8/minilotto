@@ -1,10 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
-import NavLink from '@/Components/NavLink.vue';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import Button from '@/Components/Button.vue';
 import { Link } from '@inertiajs/vue3';
 import { useDarkMode, currentSelection } from '@/Composables'
@@ -32,7 +27,7 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <div class="flex items-center">
-                                <div class="relative flex gap-4">
+                                <div class="relative flex gap-1 items-center justify-between">
                                     <!-- Dark mode toggle -->
                                     <Button
                                         :type="'button'"
@@ -52,9 +47,18 @@ const showingNavigationDropdown = ref(false);
                                     >
                                         <LanguageIcon class="w-5 h-5 text-gray-5 dark:text-white"/>
                                     </Button>
+
+                                    <Button
+                                        :href="route('logout')"
+                                        method="post"
+                                        :variant="'icon'"
+                                        aria-label="Toggle translation"
+                                    >
+                                        <LogoutIcon class="w-5 h-5 text-gray-5 dark:text-white"/>
+                                    </Button>
                                     
                                     <!-- <DropdownLink :href="route('logout')" method="post" as="button">
-                                        <LogoutIcon :class="isDarkMode ? 'text-white' : 'text-gray-5'" />
+                                        <LogoutIcon class="w-5 h-5 m-3 text-gray-5 dark:text-white"/>
                                     </DropdownLink> -->
                                 </div>
                             </div>

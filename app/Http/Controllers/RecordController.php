@@ -93,7 +93,7 @@ class RecordController extends Controller
             }
         }
     
-        $data = $query->get();
+        $data = $query->orderBy('created_at', 'desc')->get();
         return response()->json($data);
     }
     
