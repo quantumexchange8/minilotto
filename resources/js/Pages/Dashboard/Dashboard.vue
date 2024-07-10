@@ -19,6 +19,10 @@ const props = defineProps({
 
 const { isDarkMode } = useDarkMode();
 
+const isDark = computed(() => {
+    return isDarkMode;
+});
+
 const records = ref([]);
 const createRecordFormIsOpen = ref(false);
 const editRecordFormIsOpen = ref(false);
@@ -164,7 +168,7 @@ watch(date_filter, getData, { immediate: true });
                         <span class="break-all line-clamp-1 text-ellipsis text-gray-5 dark:text-gray-3 text-sm font-normal">{{ record.message }}</span>
                     </div>
                     <div class="w-full flex flex-col items-center justify-center gap-5" v-else>
-                        <component :is="isDarkMode ? NotFoundDarkIcon : NotFoundLightIcon"></component>
+                        <component :is="isDark ? NotFoundDarkIcon : NotFoundLightIcon"></component>
                         <span class="self-stretch text-center text-gray-4 text-xs font-normal">{{ currentSelection.language === 'ENG' ? 'No Records Found' : '暫無紀錄' }}</span>
                     </div>
                 </div>
