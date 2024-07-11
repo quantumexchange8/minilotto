@@ -55,7 +55,7 @@ watch(() => [form.subject_title, form.message], () => {
 
 <template>
     <form class="flex flex-col py-5 px-4 gap-6 min-h-full max-h-screen" novalidate @submit.prevent="formSubmit">
-        <div class="flex flex-col gap-6 overflow-y-auto max-h-[450px]">
+        <div class="flex flex-col gap-6 overflow-y-auto max-h-[58vh]">
             <TextInput
                 :inputName="'subject_title'"
                 :inputType="'textarea'"

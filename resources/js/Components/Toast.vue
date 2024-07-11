@@ -105,7 +105,7 @@ onUnmounted(() => {
                         leave-to="opacity-0 scale-95"
                     >
                         <DialogPanel
-                            class="transform w-full fixed bg-white dark:bg-gray-8 text-left align-middle shadow-xl transition-all max-w-[96%] min-h-[7%]"
+                            class="transform w-full fixed bg-white dark:bg-gray-8 text-left align-middle shadow-xl transition-all max-w-[96%] sm:max-w-[360px] min-h-[7%]"
                         >
                             <DialogTitle
                                 :as="'div'"

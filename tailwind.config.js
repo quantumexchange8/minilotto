@@ -70,6 +70,10 @@ export default {
                     '1': "#17B26A",
                 },
             },
+            backgroundImage: {
+                'light-background': "url('/img/login-light-background.png')",
+                'dark-background': "url('/img/login-dark-background.png')",
+            },
         },
     },
 

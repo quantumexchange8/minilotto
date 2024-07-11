@@ -1,6 +1,4 @@
 <script setup>
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { Link } from '@inertiajs/vue3';
 import Button from '@/Components/Button.vue';
 import { useDarkMode, currentSelection } from '@/Composables'
 import { SunIcon, MoonIcon, LanguageIcon } from '@/Components/Icons/outline';
@@ -8,7 +6,9 @@ const { isDarkMode, toggleDarkMode } = useDarkMode();
 </script>
 
 <template>
-    <div class="min-h-screen flex justify-center pt-6 sm:pt-0 bg-white dark:bg-gray-8">
+    <div 
+        class="min-h-screen flex justify-center pt-6 sm:pt-0 bg-light-background dark:bg-dark-background dark:bg-gray-8" 
+    >
         <div class="flex justify-center w-full sm:max-w-[360px]">
             <div class=" w-full">
                 <nav class="w-full">
