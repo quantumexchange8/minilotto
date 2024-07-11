@@ -114,7 +114,7 @@ const deleteRecord = (url) => {
 
             <div class="fixed inset-0 overflow-y-auto">
                 <div
-                    class="flex min-h-[calc(100vh-5rem)] items-center justify-center p-4 text-center"
+                    class="flex min-h-dvh items-center justify-center p-4 text-center"
                 >
                     <TransitionChild
                         as="template"
@@ -128,7 +128,7 @@ const deleteRecord = (url) => {
                         <DialogPanel
                             class="transform w-full sm:max-w-[360px] max-h-[98%] fixed rounded-2xl bg-white dark:bg-gray-8 text-left align-middle shadow-xl transition-all"
                             :class="[
-                                !props.deleteConfirmation ? 'min-h-[80vh]' : 'flex flex-col gap-6 px-4 pt-5 pb-4',
+                                !props.deleteConfirmation ? 'min-h-[98%]' : 'flex flex-col gap-6 px-4 pt-5 pb-4',
                             ]"
                         >
                             <template v-if="!props.deleteConfirmation">
