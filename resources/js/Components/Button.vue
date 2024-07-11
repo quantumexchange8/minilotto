@@ -60,10 +60,6 @@ const classes = computed(() => [
     ...baseClasses,
     variantClasses(variant),
     variant === 'icon' ? 'p-3 rounded-full w-fit' : 'py-3 px-6 rounded w-full',
-    // {
-    //     'rounded-md': !squared && !pill,
-    //     'rounded-full': pill,
-    // },
     {
         'pointer-events-none': href && disabled.value,
     },
@@ -84,26 +80,6 @@ const handleClick = (e) => {
 
 const Tag = external ?  'a' : Link
 </script>
-
-<style scoped>
-/* Add styles for the slot container */
-.icon-slot-container {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-}
-
-.margin-right {
-  margin-right: 6px;
-}
-
-.margin-left {
-  margin-left: 6px;
-}
-
-</style>
 
 <template>
     <component

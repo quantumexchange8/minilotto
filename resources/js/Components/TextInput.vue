@@ -152,6 +152,8 @@ watch(() => props.modelValue, () => {
                 :value="modelValue"
                 @input="$emit('update:modelValue', $event.target.value)"
                 ref="input"
+                :autocomplete="inputType === 'password' ? 'current-password' : ''"
+                :required="inputType === 'password' ? true : false"
                 :disabled="disabled"
                 :placeholder="placeholder"
             />

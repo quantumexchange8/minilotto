@@ -51,6 +51,7 @@ const showingNavigationDropdown = ref(false);
                                     <Button
                                         :href="route('logout')"
                                         method="post"
+                                        as="button"
                                         :variant="'icon'"
                                     >
                                         <LogoutIcon class="w-5 h-5 text-gray-5 dark:text-white"/>

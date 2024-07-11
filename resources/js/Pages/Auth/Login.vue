@@ -50,8 +50,6 @@ const submit = () => {
                         :labelTextZh="'密碼'"
                         :inputType="'password'"
                         :errorMessage="form.errors.password"
-                        autocomplete="current-password"
-                        required
                         v-model="form.password"
                     />
                 </div>
