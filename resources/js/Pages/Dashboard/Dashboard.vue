@@ -1,4 +1,7 @@
 <script setup>
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, router } from '@inertiajs/vue3';
 import Button from '@/Components/Button.vue'
@@ -10,6 +13,9 @@ import CreateRecordForm from './Partials/CreateRecordForm.vue';
 import EditRecordForm from './Partials/EditRecordForm.vue';
 import { TrashIcon, NotFoundDarkIcon, NotFoundLightIcon } from '@/Components/Icons/outline.jsx';
 import Toast from '@/Components/Toast.vue';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const props = defineProps({
     toastOption: {
@@ -52,8 +58,7 @@ const getData = async (date_filter) => {
             });
             records.value = recordsResponse.data;
             records.value.forEach(record => {
-                const newDate = new Date(record.updated_at);
-                record.updated_at = (newDate.getDate()  < 10 ? '0' + newDate.getDate() : newDate.getDate()) + '/' + ((newDate.getMonth() + 1) < 10 ? '0' + (newDate.getMonth() + 1) : (newDate.getMonth() + 1)) + '/' + (newDate.getFullYear() < 10 ? '0' + newDate.getFullYear() : newDate.getFullYear());
+                record.updated_at = dayjs(record.updated_at).tz("Asia/Kuala_Lumpur").format('DD-MM-YYYY h:mm A')
             });
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -166,8 +171,6 @@ watch(date_filter, getData, { immediate: true });
                         <span class="self-stretch text-gray-4 text-xs font-normal">{{ record.updated_at }}</span>
                         <div v-html="record.subject_title" class="self-stretch text-gray-8 dark:text-white text-sm font-bold"></div>
                         <div v-html="record.message" class="break-all line-clamp-1 text-ellipsis text-gray-5 dark:text-gray-3 text-sm"></div>
-                        <!-- <span class="self-stretch text-gray-8 dark:text-white text-sm font-bold">{{ record.subject_title }}</span>
-                        <span class="break-all line-clamp-1 text-ellipsis text-gray-5 dark:text-gray-3 text-sm font-normal">{{ record.message }}</span> -->
                     </div>
                     <div class="w-full flex flex-col items-center justify-center gap-5" v-else>
                         <component :is="isDark ? NotFoundDarkIcon : NotFoundLightIcon"></component>
